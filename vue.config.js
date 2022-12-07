@@ -8,10 +8,23 @@ module.exports = defineConfig({
   configureWebpack: {
     plugins: [
       AutoImport({
+        imports: [
+          'vue',
+          'vue-router'
+        ],
+        dts: 'src/auto-imports.d.ts',
+        dirs: [
+          'src/composables',
+          'src/store'
+        ],
+        vueTemplate: true,
         resolvers: [ElementPlusResolver()]
       }),
       Components({
-        resolvers: [ElementPlusResolver()]
+        resolvers: [ElementPlusResolver()],
+        extensions: ['vue', 'md'],
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+        dts: 'src/components.d.ts'
       })
     ]
   }
