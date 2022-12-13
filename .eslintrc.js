@@ -9,6 +9,8 @@ module.exports = {
     'arrow-parens': [
       'warn',
       'as-needed'
-    ]
+    ],
+    'no-console': 'off',
+    'import/no-mutable-exports': 'off'
   }
 }
