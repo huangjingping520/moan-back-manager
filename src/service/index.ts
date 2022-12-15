@@ -6,6 +6,11 @@ const maRequest = new MARequest({
   timeout: TIME_OUT,
   interceptors: {
     requestInterceptor: config => {
+      const token = ''
+
+      if (token)
+        config.headers.Authorization = `Bearer ${token}`
+
       console.log('req success')
       return config
     },
