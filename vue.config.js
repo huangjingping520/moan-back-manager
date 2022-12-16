@@ -22,6 +22,8 @@ module.exports = defineConfig({
       }),
       Components({
         resolvers: [ElementPlusResolver()],
+        dirs: ['src/components', 'src/views'],
+        deep: true,
         extensions: ['vue', 'md'],
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
         dts: 'src/components.d.ts'

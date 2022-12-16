@@ -9,9 +9,11 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.0.10",
     "axios": "^1.2.1",
     "core-js": "^3.8.3",
     "element-plus": "^2.2.26",
+    "normalize.css": "^8.0.1",
     "vue": "^3.2.13",
     "vue-router": "^4.1.6",
     "vuex": "^4.1.0"
