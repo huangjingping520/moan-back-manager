@@ -60,7 +60,7 @@ class MARequest {
     )
   }
 
-  request<T>(config: MARequestConfig): Promise<T> {
+  request<T>(config: MARequestConfig<T>): Promise<T> {
     return new Promise((resolve, reject) => {
       if (config.interceptors?.requestInterceptor)
         config = config.interceptors.requestInterceptor(config)
@@ -83,19 +83,19 @@ class MARequest {
     })
   }
 
-  get<T>(config: MARequestConfig): Promise<T> {
+  get<T>(config: MARequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'GET' })
   }
 
-  post<T>(config: MARequestConfig): Promise<T> {
+  post<T>(config: MARequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'POST' })
   }
 
-  delete<T>(config: MARequestConfig): Promise<T> {
+  delete<T>(config: MARequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'DELETE' })
   }
 
-  patch<T>(config: MARequestConfig): Promise<T> {
+  patch<T>(config: MARequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'PATCH' })
   }
 }
