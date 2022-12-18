@@ -1,18 +1,26 @@
 <script setup lang="ts">
 import { ElForm } from 'element-plus'
 import { accountRules } from '../../composables/account-rules'
+import localCache from '../../composables/cache'
 
 const account = reactive({
-  name: '',
-  password: ''
+  name: localCache.getCache('name') ?? '',
+  password: localCache.getCache('password') ?? ''
 })
 
 const formRef = ref<InstanceType<typeof ElForm>>()
 
-const loginAction = () => {
+const loginAction = (isKeepPassword: boolean) => {
   formRef.value?.validate(valid => {
     if (valid) {
-      console.log('登录')
+      if (isKeepPassword) {
+        localCache.setCache('name', account.name)
+        localCache.setCache('password', account.password)
+      }
+      else {
+        localCache.deleteCache('name')
+        localCache.deleteCache('password')
+      }
     }
     else {
       console.log('error submit!!')
@@ -31,7 +39,7 @@ defineExpose({ loginAction })
         <el-input v-model="account.name" placeholder="请输入账号" />
       </el-form-item>
       <el-form-item label="密码" prop="password">
-        <el-input v-model="account.password" placeholder="请输入密码" />
+        <el-input v-model="account.password" placeholder="请输入密码" show-password />
       </el-form-item>
     </el-form>
   </div>
