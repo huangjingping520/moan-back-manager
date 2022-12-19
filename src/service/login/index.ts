@@ -3,7 +3,8 @@ import type { Account, DataType, LoginResult } from './types'
 
 enum LoginAPI {
   AccountLogin = '/login',
-  LoginUserInfo = '/users/'
+  LoginUserInfo = '/users/',
+  UserMenus = '/role/'
 }
 
 export const accountLoginRequest = (account: Account) => {
@@ -16,5 +17,11 @@ export const accountLoginRequest = (account: Account) => {
 export const requestUserInfoById = (id: number) => {
   return maRequest.get<DataType>({
     url: LoginAPI.LoginUserInfo + id
+  })
+}
+
+export const requestUserMenusByRoleId = (id: number) => {
+  return maRequest.get<DataType>({
+    url: `${LoginAPI.UserMenus + id}/menu`
   })
 }

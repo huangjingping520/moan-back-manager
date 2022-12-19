@@ -28,7 +28,6 @@ class MARequest {
 
     this.instance.interceptors.request.use(
       config => {
-        console.log('所有实例请求拦截成功')
         if (this.showLoading) {
           this.loading = ElLoading.service({
             lock: true,
@@ -39,7 +38,6 @@ class MARequest {
         return config
       },
       err => {
-        console.log('所有实例请求拦截失败')
         return err
       }
     )
@@ -48,13 +46,11 @@ class MARequest {
       res => {
         this.loading?.close()
 
-        console.log('所有实例响应拦截成功')
         return res.data
       },
       err => {
         this.loading?.close()
 
-        console.log('所有实例响应拦截失败')
         return err
       }
     )
