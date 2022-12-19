@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { ElForm } from 'element-plus'
+import { useStore } from 'vuex'
 import { accountRules } from '../../composables/account-rules'
 import localCache from '../../composables/cache'
+
+const store = useStore()
 
 const account = reactive({
   name: localCache.getCache('name') ?? '',
@@ -21,6 +24,8 @@ const loginAction = (isKeepPassword: boolean) => {
         localCache.deleteCache('name')
         localCache.deleteCache('password')
       }
+
+      store.dispatch('login/accountLoginAction', { ...account })
     }
     else {
       console.log('error submit!!')
