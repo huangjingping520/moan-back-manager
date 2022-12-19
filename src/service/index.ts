@@ -1,3 +1,4 @@
+import localCache from '../composables/cache'
 import MARequest from './request'
 import { BASE_URL, TIME_OUT } from './request/config'
 
@@ -6,27 +7,22 @@ const maRequest = new MARequest({
   timeout: TIME_OUT,
   interceptors: {
     requestInterceptor: config => {
-      // const token = ''
+      const token = localCache.getCache('token')
 
-      // if (token)
-      //   config.headers.Authorization = `Bearer ${token}`
+      if (token) {
+        config.headers = config.headers ?? {}
+        config.headers.Authorization = `Bearer ${token}`
+      }
 
-      console.log('req success')
       return config
     },
     requestInterceptorCatch: error => {
-      console.log('req error')
-
       return error
     },
     responseInterceptor: res => {
-      console.log('res success')
-
       return res
     },
     responseInterceptorCatch: error => {
-      console.log('res error')
-
       return error
     }
   }
