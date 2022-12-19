@@ -15,4 +15,8 @@ const store = createStore<RootState>({
   }
 })
 
+export const setupStore = () => {
+  store.dispatch('login/loadLocalLogin')
+}
+
 export default store
