@@ -19,7 +19,8 @@ module.exports = defineConfig({
       AutoImport({
         imports: [
           'vue',
-          'vue-router'
+          'vue-router',
+          'vuex'
         ],
         dts: 'src/auto-imports.d.ts',
         dirs: [
