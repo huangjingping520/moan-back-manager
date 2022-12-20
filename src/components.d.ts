@@ -25,6 +25,7 @@ declare module '@vue/runtime-core' {
     LoginPanel: typeof import('./views/login/LoginPanel.vue')['default']
     LoginPhone: typeof import('./views/login/LoginPhone.vue')['default']
     Main: typeof import('./views/main/Main.vue')['default']
+    NavMenu: typeof import('./components/nav-menu/NavMenu.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

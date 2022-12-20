@@ -1,12 +1,11 @@
 <script setup lang="ts">
-
 </script>
 
 <template>
   <div class="main">
     <el-container class="main-content">
       <el-aside width="210px">
-        Aside
+        <NavMenu />
       </el-aside>
       <el-container class="page">
         <el-header class="page-header">
