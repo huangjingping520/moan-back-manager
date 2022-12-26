@@ -9,7 +9,7 @@
       </el-aside>
       <el-container class="page">
         <el-header class="page-header">
-          Header
+          <NavHeader />
         </el-header>
         <el-main class="page-content">
           Main
