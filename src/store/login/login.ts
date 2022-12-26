@@ -3,6 +3,7 @@ import type { LoginState, RootState } from '../types'
 import { accountLoginRequest, requestUserInfoById, requestUserMenusByRoleId } from '../../service/login/index'
 import localCache from '../../composables/cache'
 import router from '../../router'
+import { mapMenusToRoutes } from '../../composables/map-menus'
 
 export const loginModule: Module<LoginState, RootState> = {
   namespaced: true,
@@ -22,6 +23,11 @@ export const loginModule: Module<LoginState, RootState> = {
     },
     changeUserMenus(state, userMenus: any) {
       state.userMenus = userMenus
+
+      const routes = mapMenusToRoutes(userMenus)
+      routes.forEach(route => {
+        router.addRoute('main', route)
+      })
     }
   },
   actions: {

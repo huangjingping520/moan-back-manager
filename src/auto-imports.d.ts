@@ -23,6 +23,7 @@ declare global {
   const isRef: typeof import('vue')['isRef']
   const mapActions: typeof import('vuex')['mapActions']
   const mapGetters: typeof import('vuex')['mapGetters']
+  const mapMenusToRoutes: typeof import('./composables/map-menus')['mapMenusToRoutes']
   const mapMutations: typeof import('vuex')['mapMutations']
   const mapState: typeof import('vuex')['mapState']
   const markRaw: typeof import('vue')['markRaw']
@@ -98,6 +99,7 @@ declare module 'vue' {
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
     readonly mapActions: UnwrapRef<typeof import('vuex')['mapActions']>
     readonly mapGetters: UnwrapRef<typeof import('vuex')['mapGetters']>
+    readonly mapMenusToRoutes: UnwrapRef<typeof import('./composables/map-menus')['mapMenusToRoutes']>
     readonly mapMutations: UnwrapRef<typeof import('vuex')['mapMutations']>
     readonly mapState: UnwrapRef<typeof import('vuex')['mapState']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>

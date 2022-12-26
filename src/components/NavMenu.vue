@@ -1,12 +1,19 @@
 <script setup lang="ts">
 const store = useStore()
 const userMenus = computed(() => store.state.login.userMenus)
+const router = useRouter()
 
 // for (const item of userMenus.value) {
 //   const itemIcon = item.icon
 //   const icon = computed(() => itemIcon.split('-')[2])
 //   item.icon = icon
 // }
+
+const handleMenuItemClick = (item: any) => {
+  router.push({
+    path: item.url ?? '/not-found'
+  })
+}
 </script>
 
 <template>
@@ -29,7 +36,7 @@ const userMenus = computed(() => store.state.login.userMenus)
               <span>{{ item.name }}</span>
             </template>
             <template v-for="subitem in item.children" :key="subitem.id">
-              <el-menu-item :index="`${subitem.id}`">
+              <el-menu-item :index="`${subitem.id}`" @click="handleMenuItemClick(subitem)">
                 <span>{{ subitem.name }}</span>
               </el-menu-item>
             </template>

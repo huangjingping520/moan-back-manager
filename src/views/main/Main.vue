@@ -12,7 +12,7 @@
           <NavHeader />
         </el-header>
         <el-main class="page-content">
-          Main
+          <router-view />
         </el-main>
       </el-container>
     </el-container>
