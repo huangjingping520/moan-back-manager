@@ -1,18 +1,13 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
-  <div class="category">
-    <h2>category</h2>
+  <div>
+    Category
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<style scoped>
 
-export default defineComponent({
-  name: 'Category',
-  setup() {
-    return {}
-  }
-})
-</script>
-
-<style scoped></style>
+</style>

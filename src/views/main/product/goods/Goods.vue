@@ -1,18 +1,13 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
-  <div class="goods">
-    <h2>goods</h2>
+  <div>
+    Goods
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<style scoped>
 
-export default defineComponent({
-  name: 'Goods',
-  setup() {
-    return {}
-  }
-})
-</script>
-
-<style scoped></style>
+</style>

@@ -7,6 +7,11 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    404: typeof import('./views/404.vue')['default']
+    Category: typeof import('./views/main/product/category/Category.vue')['default']
+    Chat: typeof import('./views/main/story/chat/Chat.vue')['default']
+    Dashboard: typeof import('./views/main/analysis/dashboard/Dashboard.vue')['default']
+    Department: typeof import('./views/main/system/department/Department.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
@@ -23,14 +28,21 @@ declare module '@vue/runtime-core' {
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']
+    Goods: typeof import('./views/main/product/goods/Goods.vue')['default']
+    List: typeof import('./views/main/story/list/List.vue')['default']
     Login: typeof import('./views/login/Login.vue')['default']
     LoginAccount: typeof import('./views/login/LoginAccount.vue')['default']
     LoginPanel: typeof import('./views/login/LoginPanel.vue')['default']
     LoginPhone: typeof import('./views/login/LoginPhone.vue')['default']
     Main: typeof import('./views/main/Main.vue')['default']
+    Menu: typeof import('./views/main/system/menu/Menu.vue')['default']
     NavHeader: typeof import('./components/NavHeader.vue')['default']
     NavMenu: typeof import('./components/NavMenu.vue')['default']
+    Overview: typeof import('./views/main/analysis/overview/Overview.vue')['default']
+    Roke: typeof import('./views/main/system/role/Roke.vue')['default']
+    Role: typeof import('./views/main/system/role/Role.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    User: typeof import('./views/main/system/user/User.vue')['default']
   }
 }

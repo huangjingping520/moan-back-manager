@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    Department
+    404
   </div>
 </template>
 
